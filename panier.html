@@ -1,0 +1,142 @@
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Parfum Féminin</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.panier.css">
+</head>
+<body>
+    <!-- Menu burger et outils -->
+    <header class="header">
+        <div class="container">
+        <!-- Menu Burger -->
+<div class="burger-menu">
+    <div class="burger-icon" onclick="toggleMenu()">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </div>
+    <div class="menu" id="menu">
+        <div class="close-btn" onclick="toggleMenu()">&#10005;</div>
+        <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="parfums.html">Nos parfums</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="contact.html">Contact</a></li>
+         
+      
+        </ul>
+    </div>
+</div>
+
+            <div class="tools">
+                <input type="text" placeholder="Rechercher..." class="search-bar">
+                <div class="cart">
+                    <ul>
+                <li><a href="panier.html">🛒</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section class="header">
+        <h1>Votre Panier</h1>
+        </section>
+    </header>
+
+    <main class="cart-container">
+        <!-- Liste des produits -->
+        <section class="cart-items">
+            <div class="cart-item">
+                <img src="parfum1.jpg" alt="Parfum Élégance" class="product-image">
+                <div class="product-details">
+                    <h2 class="product-name">Parfum Élégance</h2>
+                    <p class="product-price">50,00 €</p>
+                    <div class="product-quantity">
+                        <label for="quantity1">Quantité :</label>
+                        <input type="number" id="quantity1" value="1" min="1">
+                    </div>
+                </div>
+                <button class="remove-button">Supprimer</button>
+            </div>
+
+            <div class="cart-item">
+                <img src="parfum2.jpg" alt="Parfum Charme" class="product-image">
+                <div class="product-details">
+                    <h2 class="product-name">Parfum Charme</h2>
+                    <p class="product-price">70,00 €</p>
+                    <div class="product-quantity">
+                        <label for="quantity2">Quantité :</label>
+                        <input type="number" id="quantity2" value="1" min="1">
+                    </div>
+                </div>
+                <button class="remove-button">Supprimer</button>
+            </div>
+        </section>
+
+        <!-- Résumé et bouton -->
+        <aside class="cart-summary">
+            <h2>Résumé de votre commande</h2>
+            <p>Total : <span class="cart-total">120,00 €</span></p>
+            <button class="cta-button">Passer à la caisse
+                <ul>
+                    <li><a href="index.html"></a></li>
+                </ul>
+
+            </button>
+        </aside>
+    </main>
+<!-- Bouton "Remonter en haut" -->
+<button id="scroll-to-top" onclick="scrollToTop()">⬆</button>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-sections">
+        <div class="footer-info">
+            <h3>Informations</h3>
+            <ul>
+                <li><a href="#">Foire aux questions</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de protection des données</a></li>
+                <li><a href="#">Conditions générales de vente</a></li>
+                <li><a href="#">Paiements sécurisés</a></li>
+                <li><a href="#">Formulaire de rétractation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Nous contacter</h3>
+            <p>01 33 49 29 10</p>
+            <p>service-client@Ina.com</p>
+            <p>20 rue de la parfemie, 75005 Paris</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Nous suivre</h3>
+            <div class="social-icons">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Instagram</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,282 @@
+/* Global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #97ECF1, #DFFDFF);
+    color: #333;
+}
+
+/* Typographie */
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: #779DB6;
+}
+
+/* Burger Menu */
+.burger-menu {
+    position: relative;
+    z-index: 10;
+}
+
+/* Icônes du burger */
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.burger-icon .line {
+    height: 4px;
+    width: 100%;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Commence à gauche, hors écran */
+    width: 250px;
+    height: 100%;
+    background-color: #fff; /* Fond blanc */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
+    z-index: 5;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    display: block;
+}
+
+/* Changer la couleur des liens au survol */
+.menu ul li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Croiss de fermeture */
+.close-btn {
+    font-size: 30px;
+    color: #000;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Style au survol du menu burger */
+.burger-icon:hover .line {
+    background-color: #ff6347; /* Changement de couleur au survol */
+}
+
+
+
+
+.tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cart {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #779DB6;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+
+/* Header */
+.header {
+    text-align: center;
+    background-color: #97ECF1;
+    color: #fff;
+    padding: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+.header h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+/* Formulaire de paiement */
+.payment-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.payment-form h2 {
+    font-family: 'Pacifico', cursive;
+    color: #97ECF1;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.cta-button {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    background-color: #97ECF1;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background-color: #79c2cc;
+}
+
+
+
+/* Bouton "Remonter" */
+#scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #97ECF1;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#scroll-to-top:hover {
+    background-color: #79c2cc;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #9fb0bb; /* Fond noir */
+    padding: 20px 0;
+    color: #2d393e; /* Texte en blanc pour contraster avec le fond noir */
+}
+
+footer h3 {
+    color: #3d5e76;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between; /* Séparation égale entre les sections */
+    border-top: 1px solid rgb(231, 237, 242); /* Trait de séparation en haut */
+}
+
+.footer-sections > div {
+    flex: 1; /* Chaque section prend 1 part égale de l'espace */
+    padding: 0 20px; /* Espacement à gauche et à droite des sections */
+}
+
+.footer-sections > div:not(:last-child) {
+    border-right: 1px solid rgb(239, 245, 245); /* Trait séparateur entre les sections */
+}
+
+.footer-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-info li {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    color: #292d34; /* Liens en blanc */
+    text-decoration: none; /* Retirer le soulignement des liens */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+
+.footer h3 {
+    margin-top: 0;
+}
+
+.social-icons a {
+    margin-right: 10px; /* Espacement entre les liens sociaux */
+    color: #62727a; /* Liens sociaux en blanc */
+    text-decoration: none; /* Retirer le soulignement des liens */
+}
+
+.social-icons a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}

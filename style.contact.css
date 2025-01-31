@@ -1,0 +1,329 @@
+
+
+/* Global */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #97ECF1, #DFFDFF);
+    color: #333;
+}
+
+/* Typographie */
+h1, h2, h3 {
+    font-family: 'Pacifico', cursive;
+    color: #779DB6;
+}
+
+/* Burger Menu */
+.burger-menu {
+    position: relative;
+    z-index: 10;
+}
+
+/* Icônes du burger */
+.burger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 24px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.burger-icon .line {
+    height: 4px;
+    width: 100%;
+    background-color: #000;
+    transition: all 0.3s ease;
+}
+
+/* Menu */
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Commence à gauche, hors écran */
+    width: 250px;
+    height: 100%;
+    background-color: #fff; /* Fond blanc */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease-in-out;
+    padding-top: 60px;
+    z-index: 5;
+}
+
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu ul li {
+    padding: 15px;
+    text-align: center;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+    display: block;
+}
+
+/* Changer la couleur des liens au survol */
+.menu ul li a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Croiss de fermeture */
+.close-btn {
+    font-size: 30px;
+    color: #000;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+/* Style au survol du menu burger */
+.burger-icon:hover .line {
+    background-color: #ff6347; /* Changement de couleur au survol */
+}
+
+
+
+
+.tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.cart {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #779DB6;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}/* Style général de la page Contact */
+.contact-page {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+
+/* En-tête de la page */
+.contact-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.contact-header h1 {
+    font-size: 36px;
+    color: #333;
+    font-family: 'Pacifico', cursive; /* Police pour le titre */
+    margin-bottom: 10px;
+}
+
+
+.contact-header .page-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+
+/* Contenu principal */
+.contact-content {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+/* Formulaire de contact */
+.contact-form {
+    flex: 1 1 45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-form h2 {
+    font-size: 28px;
+    color: #333;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 20px;
+}
+
+
+.contact-form label {
+    font-size: 16px;
+    color: #555;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #97ECF1; /* Couleur pastel */
+    box-shadow: 0 0 5px rgba(151, 236, 241, 0.5);
+}
+
+
+.btn-submit {
+    padding: 12px 25px;
+    background-color: #97ECF1; /* Couleur pastel */
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.btn-submit:hover {
+    background-color: #68c3d3; /* Couleur plus foncée au survol */
+}
+
+
+/* Informations de contact */
+.contact-info {
+    flex: 1 1 45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.contact-info h2 {
+    font-size: 28px;
+    color: #333;
+    font-family: 'Pacifico', cursive;
+    margin-bottom: 15px;
+}
+
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+
+.contact-info a {
+    color: #97ECF1; /* Couleur pastel */
+    text-decoration: none;
+}
+
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+
+/* Réseaux sociaux */
+.social-icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+/* FOOTER */
+
+.footer {
+    background-color: #9fb0bb; /* Fond noir */
+    padding: 20px 0;
+    color: #2d393e; /* Texte en blanc pour contraster avec le fond noir */
+}
+
+footer h3 {
+    color: #3d5e76;
+}
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between; /* Séparation égale entre les sections */
+    border-top: 1px solid rgb(231, 237, 242); /* Trait de séparation en haut */
+}
+
+.footer-sections > div {
+    flex: 1; /* Chaque section prend 1 part égale de l'espace */
+    padding: 0 20px; /* Espacement à gauche et à droite des sections */
+}
+
+.footer-sections > div:not(:last-child) {
+    border-right: 1px solid rgb(239, 245, 245); /* Trait séparateur entre les sections */
+}
+
+.footer-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-info li {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    color: #292d34; /* Liens en blanc */
+    text-decoration: none; /* Retirer le soulignement des liens */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+
+.footer h3 {
+    margin-top: 0;
+}
+
+.social-icons a {
+    margin-right: 10px; /* Espacement entre les liens sociaux */
+    color: #62727a; /* Liens sociaux en blanc */
+    text-decoration: none; /* Retirer le soulignement des liens */
+}
+
+.social-icons a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
