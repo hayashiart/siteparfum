@@ -1,0 +1,977 @@
+
+	
+/*Body*/
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+header {
+    background-color: #ffffff;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Titre */
+h1 {
+    font-family: 'Pacifico', cursive;
+    color: white;
+    margin: 0;
+    font-size: 24px;
+}
+/* MENU BURGER */
+.menu-burger {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+
+.menu-burger span {
+    display: block;
+    width: 30px;
+    height: 4px;
+    background-color: rgb(0, 0, 0);
+    transition: background 0.3s;
+}
+
+/* Effet au survol : changement de couleur des traits */
+.menu-burger:hover span {
+    background-color: #8cbfd7;
+}
+
+
+/* MENU LATÉRAL */
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+    padding-top: 60px;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+    z-index: 5;
+}
+
+.side-menu.open {
+    transform: translateX(260px);
+}
+
+.side-menu a {
+    font-family: pacifico;
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color:#084663 ;
+    font-size: 18px;
+    text-align: center;
+    transition: background 0.3s, color 0.3s;
+}
+
+.side-menu a:hover {
+    background-color: #8cbfd7;
+    color: white;
+}
+
+/* Bouton de fermeture */
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #111314;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #8cbfd7;
+}
+
+
+
+/* LOGO */
+.logo img {
+    height: 70px; /* Ajuste la taille du logo */
+    width: auto;
+    margin-left: 110px;
+}
+
+/* ICÔNES À DROITE */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+}
+/* STYLE DES ICÔNES */
+.icon {
+    height: 30px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+/* Effet au survol : légère animation */
+.icon:hover {
+    transform: scale(1.1);
+}
+
+
+/*Recherche */
+
+
+/* Conteneur de recherche */
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icône de recherche */
+.search-icon {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Formulaire de recherche */
+.search-form {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%; /* S'assure que le formulaire occupe toute la largeur */
+    max-width: 400px; /* Limite la largeur à un certain nombre de pixels */
+}
+
+/* Champ de texte (input) */
+#search-input {
+    padding: 12px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    flex-grow: 1; /* Le champ de texte prend toute la place disponible */
+    outline: none;
+    transition: width 0.3s ease;
+}
+
+#search-input:focus {
+    border-color: #4281b8;
+}
+
+/* Bouton de recherche (loupe à droite du champ) */
+.search-button {
+    padding: 10px;
+    border: none;
+    background-color: #286698;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px; /* Espace entre le champ de texte et le bouton */
+}
+
+
+.search-button:active {
+    background-color: #223f55;
+}
+
+.search-button .search-icon {
+    font-size: 18px;
+    margin-right: 0;
+}
+/* Bouton de recherche */
+#search-form button {
+    padding: 10px;
+    background-color: #5592a9;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #304a56;
+}
+
+
+
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #97ECF1, #DFFDFF);
+}
+
+.hero h2 {
+    font-family: 'Pacifico', cursive;
+    color: #333;
+    font-size: 28px;
+}
+
+.hero p {
+    color: #555;
+    font-size: 18px;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #97ECF1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+/* Header */
+
+
+
+/* Conteneur du slider */
+.back {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    margin-left: 0;  
+}
+
+
+
+
+/* Styles pour chaque slide */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Initialement transparent */
+    transition: opacity 1s ease-in-out;
+}
+
+
+
+
+/* Affiche la slide active */
+.slide.active {
+    opacity: 10
+    ; /* Transparence réglable */
+}
+
+
+
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #779DB6;
+}
+
+
+
+.header h1 {
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+
+
+/* Conteneur principal du panier */
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Style des articles dans le panier */
+.cart {
+    background-color: white; /* Fond blanc */
+    padding: 20px;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Ombre */
+    max-width: 600px;
+    margin: auto; /* Centre la section */
+    margin-top: 5%;
+    margin-bottom: 15%;
+}
+
+
+
+/* Style individuel de chaque article */
+
+.cart-items {
+   
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 0;
+    
+}
+
+/* Image et nom du produit */
+.item-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.item-info img {
+    width: 50px;
+    height: auto;
+}
+
+.product-name {
+    font-weight: bold;
+    font-size: 45px;
+}
+
+/* Quantité et bouton supprimer sur la même ligne */
+.item-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 39px;
+}
+
+/* Quantité */
+.item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity {
+    width: 50px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #274370;
+}
+
+/* Prix sous la quantité */
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    color: #1f375f;
+    margin-top: 5px;
+}
+
+/* Bouton supprimer */
+.remove-btn {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+.remove-btn:hover {
+    background-color: darkred;
+    transform: scale(1.05);
+}
+
+
+
+
+/* Résumé de la commande */
+.cart-summary {
+    background-color: #b4cce4;
+    color: rgb(14, 13, 13);
+    padding: 20px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    text-align: center; /* Centre le texte */
+    max-width: 200px;
+    margin: auto; /* Centre la section */
+    font-size: 0.7rem;
+}
+
+
+
+/* Bouton "Passer à la caisse" */
+.cta-button {
+    background-color: #497ec7;
+    color: rgb(8, 8, 8);
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+
+
+
+.cta-button:hover {
+    background-color: #3a5f8a;
+    transform: scale(1.05);
+}
+
+
+
+.recommended {
+    font-size: 0.8rem;
+    margin-bottom: 10%;
+}
+
+
+
+/* Carrousel */
+
+h1 {
+    margin-bottom: 30px;
+    color: #3a678f;
+    margin-left: 36%;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #3a678f;
+    text-align: center;
+    font-size: 200%;
+}
+
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 30px auto;
+    position: relative;
+    width: 80%;
+   
+}
+
+
+.carousel-container {
+    width: 90%;
+    overflow: hidden;
+}
+
+.carousel-items {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 200%; /* Cela permettra de tenir 3 éléments en tout */
+}
+
+.carousel-item {
+    width: 20.33%; /* Elément occupe 1/3 de l'espace */
+    text-align: center;
+    padding: 10px;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 150px;
+    height: 226px;
+}
+
+.product-name {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #406190;
+}
+
+.product-type {
+    font-size: 14px;
+    color: #666;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #1d2c78;
+    font-weight: bold;
+}
+
+
+/* Boutons de navigation du carrousel */
+.prev-btn, .next-btn {
+    background-color: #5386c9;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+    border-radius: 50%;
+}
+
+
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: #2b4664;
+   
+}
+
+
+
+.prev-btn { left: 5px; }
+.next-btn { right: 5px; }
+
+
+
+
+/* Bouton "Remonter" */
+#scroll-to-top {
+    position: fixed;
+    bottom: 18px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none; /* Caché par défaut */
+}
+
+
+
+
+
+#scroll-to-top img {
+    width:  60%;
+    height: 70%;
+    border-radius: 50%;
+}
+
+.product-rating {
+    margin-top: 10px;
+}
+
+.star {
+    color: rgb(55, 122, 193);
+    font-size: 20px;
+}
+
+.star:hover {
+    color: rgb(40, 57, 131);
+}
+
+
+
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #2174acc7; /* Fond noir */
+    padding: 20px 0;
+    color: #ffffff; /* Texte en blanc pour contraster avec le fond noir */
+    font-size: 12px;
+}
+
+
+
+footer h3 {
+    
+    color: #ffffff;
+    font-size: 16px;
+    
+}
+
+
+
+.footer-sections {
+    display: flex;
+    justify-content: space-between; /* Séparation égale entre les sections */
+    border-top: 1px solid rgb(231, 237, 242); /* Trait de séparation en haut */
+}
+
+
+
+.footer-sections > div {
+    flex: 1; /* Chaque section prend 1 part égale de l'espace */
+    padding: 0 20px; /* Espacement à gauche et à droite des sections */
+}
+
+
+
+.footer-sections > div:not(:last-child) {
+    border-right: 1px solid rgb(239, 245, 245); /* Trait séparateur entre les sections */
+}
+
+.footer-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-info li {
+    margin-bottom: 10px;
+}
+
+.footer-info a {
+    color: #ffffff; /* Liens en blanc */
+    text-decoration: none; /* Retirer le soulignement des liens */
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+
+.footer h3 {
+    margin-top: 0;
+}
+
+
+
+.social-icons {
+    display: flex;
+  gap: 9%;
+    margin: 10px 0;
+}
+
+
+.social-icons a img {
+    width: 20px;  /* Ajuste la taille des icônes */
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+
+.social-icons a img:hover {
+    transform: scale(1.1);  /* Effet au survol */
+}
+
+
+.social-icons a:hover {
+    text-decoration: underline; /* Souligne le lien au survol */
+}
+.LOGO{
+    background-image: url('../imagesFooter/logoFooter.JPG');
+    background-size: cover;
+    height: 57px;
+    width: 150px;
+    margin: -60px 0px 0px 424px;
+    border-radius: 13px;
+
+}
+
+
+@media screen and (max-width: 700px) {
+ 
+
+
+    /* LOGO */
+    .logo img {
+        height: 124px; /* Réduit la taille du logo */
+        margin-right: 178px;
+    }
+    .icon{
+        height: 58px;
+    }
+
+
+
+
+    /* MENU BURGER */
+    .menu-burger {
+        gap: 3px;
+        padding: 8px;
+    }
+
+
+
+
+    .menu-burger span {
+        width: 55px;
+        height: 11px;
+    }
+
+
+
+
+    /* MENU LATÉRAL */
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        padding-top: 60px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
+        z-index: 5;
+    }
+    
+    .side-menu.open {
+        transform: translateX(260px);
+        width: 424px;
+    }
+    
+    .side-menu a {
+        font-family: pacifico;
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color:#084663 ;
+        font-size: 47px;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+    }
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 71px;
+        cursor: pointer;
+        color: #111314;
+        transition: color 0.3s;
+    }
+
+
+
+
+    /* HERO SECTION */
+    .hero {
+        padding: 30px;
+    }
+
+
+
+
+    .hero h2 {
+        font-size: 22px;
+    }
+
+
+
+
+    .hero p {
+        font-size: 16px;
+    }
+
+
+
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+
+
+
+    /* SLIDER */
+    .back {
+        height: 150px;
+        width: 776px;
+    }
+    .remove-btn{
+        font-size: 30px;
+    }
+
+
+
+
+    /* PANIER */
+    .cart-container {
+        max-width: 100%;
+        padding: 15px;
+    }
+
+
+
+
+    .cart {
+        width: 652px;
+        height: 983px;
+        margin-left: 70px;
+        display: block;
+    }
+
+
+
+
+    .cart-summary {
+        max-width: 433px;
+        font-size: 20px;
+        height: 276px;
+    }
+    .quantity{
+        font-size: 33px;
+    }
+    .price{
+        font-size: 23px;
+    }
+    h1{
+        font-size: 40px;
+    }
+    .cta-button{
+        font-size: 23px;
+    }
+    .recommended{
+        font-size: 23px;
+    }
+
+
+
+
+    /* CARROUSEL */
+    .carousel {
+        width: 768px;
+    }
+
+
+
+
+    .carousel-container {
+        width: 576px;
+    }
+
+
+
+
+    .carousel-items {
+        width: 200%; /* Pour s’adapter à plus d'éléments */
+    }
+
+
+
+
+    .carousel-item {
+        width: 30.33%;
+        padding: 5px;
+    }
+
+
+
+
+    .carousel-item img {
+        max-width: 100px;
+    }
+
+
+    .star {
+        font-size: 9px;
+    }
+    .product-type{
+        font-size: 26px;
+    }
+    .product-price{
+        font-size: 23px;
+    }
+    .star{
+        font-size: 24px;
+    }
+
+
+
+
+    /* BOUTON REMONTER */
+    #scroll-to-top {
+        width: 40px;
+        height: 40px;
+    }
+
+
+
+
+    /* FOOTER */
+    .footer {
+        padding: 15px 0;
+        font-size: 7px;
+        width: 779px;
+        height: 30%;
+    }
+
+
+
+
+  .footer h3 {
+    font-size: 7px;
+ 
+  }
+
+
+    .footer-sections > div {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding-bottom: 10px;
+        font-size: 6px;
+    }
+
+
+
+
+    .footer-sections > div:last-child {
+        border-bottom: none;
+    }
+
+
+
+
+    .social-icons {
+        justify-content: center;
+        gap: 12px;
+        margin-right: 519px;
+    }
+
+
+    .social-icons a img {
+        width: 7px;
+        height: 7px;
+    }
+    .LOGO{
+        background-image: url(../imagesFooter/logoFooter.JPG);
+        background-size: cover;
+        height: 57px;
+        width: 150px;
+        margin: -24px 0px 0px 424px;
+        border-radius: 13px;
+    }
+}
+
+
+
+
+

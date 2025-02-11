@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML (HTML5) -->
+<html lang="fr">
+<!-- Sets the language of the document to French -->
+<head>
+    <!-- Metadata and links to external resources -->
+    <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the document (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is responsive and scales properly on all devices -->
+     
+    
+    <!--sécurité regex-->
+    <title>Accueil - Parfum Féminin</title>
+    <!-- Sets the title of the webpage (displayed in the browser tab) -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Links to the "Pacifico" font from Google Fonts -->
+    <link rel="stylesheet" href="./style.panier.css">
+    <!-- Links to the external CSS file for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <!-- The main content of the webpage -->
+   
+    <header>
+        <!-- Header section containing the navigation and logo -->
+        
+        <!-- Burger Menu (for mobile navigation) -->
+        <div class="menu-burger" id="menu-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Side Menu (hidden by default, toggled by the burger menu) -->
+        <div class="side-menu" id="side-menu">
+            <div class="close-btn" id="close-btn">&times;</div>
+            <!-- Close button for the side menu -->
+            <a href="./index.html">Accueil</a>
+            <a href="./produit.html">Nos Parfums</a>
+            <a href="./about.html">À propos</a>
+            <a href="./contact.html">Contact</a>
+            <!-- Navigation links -->
+        </div>
+
+        <!-- Centered Logo -->
+        <div class="logo">
+            <img src="../imagesHeader/imageLogo.jpeg" alt="Logo Ina">
+            <!-- Displays the website logo -->
+        </div>
+
+        <!-- Icons on the right side (Search and Cart) -->
+        <div class="icons">
+            <div class="search-container">
+                <img src="../imagesHeader/imageRecherche.jpg" alt="Recherche" class="icon" id="search-icon">
+                <!-- Search icon -->
+                <form action="#" method="get" id="search-form" style="display: none;">
+                    <!-- Hidden search form -->
+                    <input type="text" id="search-input" name="query" placeholder="Que voulez-vous chercher ? " />
+                    <button type="submit">Rechercher</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+
+        <!-- Banner with sliding images -->
+        <div class="back">
+            <div class="ici">
+                <!-- Slides with background images -->
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide1.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide2.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide3.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide4.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide5.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide6.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide7.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide8.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide9.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide10.png);"></div>
+            </div>
+        </div>
+
+    <!-- "Scroll to Top" button -->
+    <button id="scroll-to-top" onclick="scrollToTop()">
+        <img src="../imagesFooter/Fleche.jpeg" alt="Remonter">
+        <!-- Arrow icon for scrolling to the top of the page -->
+    </button>
+
+
+        <!-- Liste des produits -->
+        <section class="cart">
+            <h1>Votre Panier</h1>
+        
+            <div class="cart-items">
+                <div class="cart-item" data-index="0">
+                    <div class="item-info">
+                        <img src="../imagesPanier/Armani.webp" alt="Parfum Élégance" style=" width: 98px;
+    height: auto;">
+                        <p class="product-name">Armani</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="item-quantity">
+                            <label for="quantity-0">Quantité :</label>
+                            <input type="number" id="quantity-0" class="quantity" data-index="0" value="1" min="1">
+                        </div>
+                        <button class="remove-btn" data-index="0">Supprimer</button>
+                    </div>
+                    <p class="price" data-price="60.00">60,00 €</p>
+                </div>
+        
+                <div class="cart-item" data-index="1">
+                    <div class="item-info 2">
+                        <img src="../imagesPanier/Yvesstlaurent.webp" alt="Coffret Charmeur">
+                        <p class="product-name">Yves St Laurent</p>
+                    </div>
+                    <div class="item-actions">
+                        <div class="item-quantity">
+                            <label for="quantity-1">Quantité :</label>
+                            <input type="number" id="quantity-1" class="quantity" data-index="1" value="1" min="1">
+                        </div>
+                        <button class="remove-btn" data-index="1">Supprimer</button>
+                    </div>
+                    <p class="price" data-price="80.00">80,00 €</p>
+                </div>
+            </div>
+        
+            <!-- Résumé de la commande -->
+            <aside class="cart-summary">
+                <h2 style="font-family: pacifico;">Résumé de votre commande</h2>
+                <p>Total : <span class="cart-total">140,00 €</span></p>
+                <button class="cta-button" onclick="window.location.href='paiement.html'">Passer à la caisse</button>
+            </aside>
+                </div>
+            </section>
+    
+            <!-- Carrousel des produits recommandés -->
+            <section class="recommended">
+                <h2 style="font-family: pacifico;">Recommandés pour vous :</h2>
+                <div class="carousel">
+                    <button class="prev-btn">◀</button>
+                    <div class="carousel-container">
+                        <div class="carousel-items">
+                            <div class="carousel-item">
+                                <a href="#"><img src="../imagesPanier/Kenzo.jpg" alt="Kenzo Flower"></a>
+                                <p class="product-name">Kenzo Flower</p>
+                                <p class="product-type">Eau de parfum - Vaporisateur</p>
+                                <p class="product-price">75,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                </div>
+                        
+                            </div>
+            
+                            <div class="carousel-item">
+                                <a href="#"><img src="../imagesPanier/Lolila.jpg" alt="Lolila"></a>
+                                <p class="product-name">Lolita Lempicka</p>
+                                <p class="product-type">Eau de toilette - Spray</p>
+                                <p class="product-price">60,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                    <span class="star">&#9734;</span>
+                                </div>
+                        
+                            </div>
+            
+                            <div class="carousel-item">
+                                <a href="#"><img src="../imagesPanier/Lancome.jpg" alt="Lancome"></a>
+                                <p class="product-name">Lancôme La Vie Est Belle</p>
+                                <p class="product-type">Eau de parfum - Vaporisateur</p>
+                                <p class="product-price">90,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                </div>
+                        
+                            </div>
+            
+                        
+                            <div class="carousel-item">
+                                <img src="../imagesPanier/Dior.webp" alt=" Dior J'adore">
+                                <p class="product-name">Dior J'adore</p>
+                                <p class="product-type">Eau de parfum - Vaporisateur</p>
+                                <p class="product-price">105,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                </div>
+                        
+                            </div>
+            
+                            <div class="carousel-item">
+                                <img src="../imagesPanier/MonGuerlain.jpg" alt="Guerlain Mon Guerlain">
+                                <p class="product-name">Guerlain Mon Guerlain</p>
+                                <p class="product-type">Eau de parfum - Spray</p>
+                                <p class="product-price">85,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                </div>
+                        
+
+                            </div>
+
+                            
+                            <div class="carousel-item">
+                                <a href="#"><img src="../imagesPanier/Chanel.jpg" alt="Chanel No 5"></a>
+                                <p class="product-name">Chanel No 5</p>
+                                <p class="product-type">Eau de parfum - Vaporisateur</p>
+                                <p class="product-price">120,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                </div>
+                        
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <a href="#"><img src="../imagesPanier/YSLOpium.jpg" alt="Yves Saint Laurent Opium"></a>
+                                <p class="product-name">Yves Saint Laurent Opium</p>
+                                <p class="product-type">Eau de parfum - Vaporisateur</p>
+                                <p class="product-price">95,00 €</p>
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                    <span class="star">&#9734;</span>
+                                </div>
+                        
+                            </div>
+                            
+                            <div class="carousel-item">
+                                <a href="#"><img src="../imagesPanier/Givenchy.jpg" alt="Givenchy L'Interdit"></a>
+                                <p class="product-name">Givenchy L'Interdit</p>
+                                <p class="product-type">Eau de parfum - Vaporisateur</p>
+                                <p class="product-price">85,00 €</p>
+                            
+                                <div class="product-rating">
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9733;</span>
+                                    <span class="star">&#9734;</span>
+                                </div>
+                        
+                        
+                        
+                        
+                        </div>
+                    </div>
+                    <button class="next-btn">▶</button>
+                </div>
+            </section>
+            
+            
+        </main>
+    
+    
+   
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-sections">
+        <div class="footer-info">
+            <h3>Informations</h3>
+            <ul>
+                <li><a href="#">Foire aux questions</a></li>
+                <li><a href="#">Mentions légales</a></li>
+                <li><a href="#">Politique de protection des données</a></li>
+                <li><a href="#">Conditions générales de vente</a></li>
+                <li><a href="#">Paiements sécurisés</a></li>
+                <li><a href="#">Formulaire de rétractation</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-contact">
+            <h3>Nous contacter</h3>
+            <p>01 33 49 29 10</p>
+            <p>service-client@Ina.com</p>
+            <p>20 rue de la parfumerie, 75005 Paris</p>
+        </div>
+
+        <div class="footer-social">
+            <h3>Nous suivre</h3>
+            <div class="social-icons">
+                <a href="#"><img src="../imagesFooter/Facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../imagesFooter/Instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="../imagesFooter/Twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="../imagesFooter/Youtube.png" alt="YouTube"></a>
+            </div>
+            <div class="LOGO"></div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- JavaScript -->
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js">
+    </script>
+    <script src="script.panier.js">
+    </script>
+
+</body>
+</html>
+
+

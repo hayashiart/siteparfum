@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!-- Declares the document type and version of HTML (HTML5) -->
+<html lang="fr">
+<!-- Sets the language of the document to French -->
+<head>
+    <!-- Metadata and links to external resources -->
+    <meta charset="UTF-8">
+    <!-- Specifies the character encoding for the document (UTF-8) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is responsive and scales properly on all devices -->
+   
+    <!--sécurité regex-->
+    <title>Accueil - Parfum Féminin</title>
+    <!-- Sets the title of the webpage (displayed in the browser tab) -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <!-- Links to the "Pacifico" font from Google Fonts -->
+    <link rel="stylesheet" href="./style.produit.css">
+    <!-- Links to the external CSS file for styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Padauk:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <!-- The main content of the webpage -->
+   
+    <header>
+        <!-- Header section containing the navigation and logo -->
+        
+        <!-- Burger Menu (for mobile navigation) -->
+        <div class="menu-burger" id="menu-burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Side Menu (hidden by default, toggled by the burger menu) -->
+        <div class="side-menu" id="side-menu">
+            <div class="close-btn" id="close-btn">&times;</div>
+            <!-- Close button for the side menu -->
+            <a href="./index.html">Accueil</a>
+            <a href="./produit.html">Nos Parfums</a>
+            <a href="./about.html">À propos</a>
+            <a href="./contact.html">Contact</a>
+            <!-- Navigation links -->
+        </div>
+
+        <!-- Centered Logo -->
+        <div class="logo">
+            <img src="../imagesHeader/imageLogo.jpeg" alt="Logo Ina">
+            <!-- Displays the website logo -->
+        </div>
+
+        <!-- Icons on the right side (Search and Cart) -->
+        <div class="icons">
+            <div class="search-container">
+                <img src="../imagesHeader/imageRecherche.jpg" alt="Recherche" class="icon" id="search-icon">
+                <!-- Search icon -->
+                <form action="#" method="get" id="search-form" style="display: none;">
+                    <!-- Hidden search form -->
+                    <input type="text" id="search-input" name="query" placeholder="Que voulez-vous chercher ? " />
+                    <button type="submit">Rechercher</button>
+                </form>
+            </div>
+            
+            <!-- Shopping Cart -->
+            <div class="cart">
+                <a href="panier.html">
+                    <img src="../imagesHeader/imagePanier.JPG" alt="Panier" class="icon">
+                    <!-- Cart icon -->
+                    <span class="cart-count">2</span>
+                    <!-- Displays the number of items in the cart -->
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <!-- Banner with sliding images -->
+        <div class="back">
+            <div class="ici">
+                <!-- Slides with background images -->
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide1.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide2.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide3.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide4.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide5.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide6.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide7.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide8.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide9.png);"></div>
+                <div class="slide" style="background-image: url(../imagesSlide/imageSlide10.png);"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- "Scroll to Top" button -->
+    <button id="scroll-to-top" onclick="scrollToTop()">
+        <img src="../imagesFooter/Fleche.jpeg" alt="Remonter">
+        <!-- Arrow icon for scrolling to the top of the page -->
+    </button>
+      
+        <div class="container">
+            <!-- Sidebar (bloc gris) -->
+            <div class="filter-sidebar">
+              <h2>Affiner par</h2>
+              <!-- Filtre par catégorie -->
+              <div class="filter-category">
+                <label for="category">Catégorie :</label>
+                <select id="category">
+                  <option value="">Sélectionnez une catégorie</option>
+                  <option value="eau-de-parfum">Eau de Parfum</option>
+                  <option value="eau-de-toilette">Eau de Toilette</option>
+                  <option value="eau-de-cologne">Eau de Cologne</option>
+                  <option value="parfum">Parfum</option>
+                </select>
+              </div>
+              <!-- Filtre par marque -->
+              <div class="filter-brand">
+                <label for="brand">Marque :</label>
+                <select id="brand">
+                  <option value="">Choisir une marque</option>
+                  <option value="chanel">Chanel</option>
+                  <option value="dior">Dior</option>
+                  <option value="Yves Saint Laurent">Yves Saint Laurent</option>
+                </select>
+              </div>
+              <!-- Filtre par marque (checkboxes) -->
+              <div class="brand-option">
+                <label><input type="checkbox" name="brand" value="chanel"> Chanel</label>
+                <label><input type="checkbox" name="brand" value="dior"> Dior</label>
+                <label><input type="checkbox" name="brand" value="ysl"> YSL</label>
+              </div>
+              <!-- Filtre par prix -->
+              <div class="price-filter">
+                <div class="price-range">
+                  <div class="price-min" id="price-min">0€</div>
+                  <div class="price-max" id="price-max">1000€</div>
+                </div>
+                <div class="slider">
+                  <input type="range" min="0" max="1000" value="0" class="slider-min" id="slider-min">
+                  <input type="range" min="0" max="1000" value="1000" class="slider-max" id="slider-max">
+                </div>
+              </div>
+              <!-- Bouton pour appliquer les filtres -->
+              <button class="filter-button">Filtres</button>
+            </div>
+          
+            <!-- Conteneur de produits à droite -->
+            <div class="product-wrapper">
+              <!-- Première section de produits -->
+              <div class="product-container">
+                <div class="header-nouveaute">
+                  <h1>Nos Produits Parfum femme</h1>
+                </div>
+                <div class="products">
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum1.jpg" alt="Parfum 1">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 1</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€50</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum2.jpg" alt="Parfum 2">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 2</p>
+                      <p class="product-type">Millesime Jasmin</p>
+                      <p class="product-price">€60</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum3.jpg" alt="Parfum 3">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 3</p>
+                      <p class="product-type">Parfum</p>
+                      <p class="product-price">€70</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum4.jpg" alt="Parfum 4">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 4</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€80</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Deuxième section de produits -->
+              <div class="product-container">
+                <div class="products">
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum5.jpg" alt="Parfum 5">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 5</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€50</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum6.jpg" alt="Parfum 6">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 6</p>
+                      <p class="product-type">Millesime Jasmin</p>
+                      <p class="product-price">€60</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum7.jpg" alt="Parfum 7">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 7</p>
+                      <p class="product-type">Parfum</p>
+                      <p class="product-price">€70</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum8.jpg" alt="Parfum 8">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 8</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€80</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Troisième section de produits -->
+              <div class="product-container">
+                <div class="products">
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum9.jpg" alt="Parfum 9">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 9</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€50</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum10.jpg" alt="Parfum 10">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 10</p>
+                      <p class="product-type">Millesime Jasmin</p>
+                      <p class="product-price">€60</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum11.jpg" alt="Parfum 11">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 11</p>
+                      <p class="product-type">Parfum</p>
+                      <p class="product-price">€70</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum12.jpg" alt="Parfum 12">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 12</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€80</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Quatrième section de produits -->
+              <div class="product-container">
+                <div class="products">
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum13.jpg" alt="Parfum 13">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 13</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€50</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum14.jpg" alt="Parfum 14">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 14</p>
+                      <p class="product-type">Millesime Jasmin</p>
+                      <p class="product-price">€60</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum16.jpg" alt="Parfum 17">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 17</p>
+                      <p class="product-type">Parfum</p>
+                      <p class="product-price">€70</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum18.jpg" alt="Parfum 18">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 18</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€80</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Cinquième section de produits -->
+              <div class="product-container">
+                <div class="products">
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum19.jpg" alt="Parfum 19">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 19</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€50</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum20.jpg" alt="Parfum 20">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 20</p>
+                      <p class="product-type">Millesime Jasmin</p>
+                      <p class="product-price">€60</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum21.jpg" alt="Parfum 21">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 21</p>
+                      <p class="product-type">Parfum</p>
+                      <p class="product-price">€70</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum22.jpg" alt="Parfum 22">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 22</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€80</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          
+              <!-- Sixième section de produits -->
+              <div class="product-container">
+                <div class="products">
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum23.jpg" alt="Parfum 23">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 23</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€50</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum24.jpg" alt="Parfum 24">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 24</p>
+                      <p class="product-type">Millesime Jasmin</p>
+                      <p class="product-price">€60</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum25.jpg" alt="Parfum 25">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 25</p>
+                      <p class="product-type">Parfum</p>
+                      <p class="product-price">€70</p>
+                    </div>
+                  </div>
+                  <div class="product">
+                    <img src="../imagesParfums/imageparfum26.jpg" alt="Parfum 26">
+                    <div class="product-info">
+                      <p class="product-name">Parfum 26</p>
+                      <p class="product-type">Eau de Parfum</p>
+                      <p class="product-price">€80</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Bloc de contrôles en bas -->
+          <div class="bottom-controls">
+            <div class="affichage">
+              <span>Affichage par :</span>
+              <a href="#">21</a>
+              <a href="#">60</a>
+              <a href="#">120</a>
+            </div>
+            <div class="pagination">
+              <a href="#">1</a>
+              <a href="#">2</a>
+              <a href="#">3</a>
+            </div>
+          </div>
+          
+          <hr>
+          
+       <!-- Bloc rose en bas -->
+    <div class="footer-banner">
+        <div class="footer-banner-image">
+            <img src="/imagesParfums/imageFemme2.png" alt="Femme avec parfum">
+        </div>
+        <div class="footer-banner-text">
+            <h1>PARFUM FEMME</h1>
+            <p>Sur notre site, découvrez une collection exclusive des plus grandes marques de parfum, soigneusement sélectionnées pour vous offrir des expériences olfactives incomparables. Que vous soyez à la recherche d’un parfum floral, boisé, oriental ou fruité, nous avons ce qu'il vous faut pour chaque occasion et chaque personnalité. 
+                Nos parfums sont bien plus que de simples senteurs : ce sont des créations raffinées qui vous permettent de vous exprimer à travers des arômes subtils et durables. Offrez-vous un voyage sensoriel unique ou trouvez le cadeau parfait pour vos proches avec des options qui marient élégance et originalité.</p>
+        </div>
+    </div>
+
+          
+
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="footer-sections">
+            <!-- Information section -->
+            <div class="footer-info">
+                <h3>Informations</h3>
+                <ul>
+                    <li><a href="#">Foire aux questions</a></li>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de protection des données</a></li>
+                    <li><a href="#">Conditions générales de vente</a></li>
+                    <li><a href="#">Paiements sécurisés</a></li>
+                    <li><a href="#">Formulaire de rétractation</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact section -->
+            <div class="footer-contact">
+                <h3>Nous contacter</h3>
+                <p>01 33 49 29 10</p>
+                <p>service-client@Ina.com</p>
+                <p>20 rue de la parfumerie, 75005 Paris</p>
+            </div>
+
+            <!-- Social media section -->
+            <div class="footer-social">
+                <h3>Nous suivre</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="../imagesFooter/Facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="../imagesFooter/Instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="../imagesFooter/Twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="../imagesFooter/Youtube.png" alt="YouTube"></a>
+                </div>
+                <div class="LOGO"></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript files -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js">
+    </script>
+    <script src="./script.produit.js">
+    </script>
+</body>
+</html>
+ 

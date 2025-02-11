@@ -1,0 +1,1026 @@
+/* ========================= */
+/*       Style Global        */
+/* ========================= */
+
+/* Définition de la police de base pour le corps de la page */
+/* On utilise ici Arial, une police sans-serif très répandue.
+   Alternative : 'Helvetica', sans-serif ou une police personnalisée via @font-face */
+   body {
+    font-family: Arial, sans-serif; /* Police de caractères par défaut pour le site */
+}
+
+/* ========================= */
+/*         HEADER            */
+/* ========================= */
+
+/* Styles généraux pour l'en-tête du site */
+/* L'en-tête contient la navigation principale, le logo et les icônes. */
+header {
+    background-color: #ffffff;  /* Fond blanc pour l'en-tête */
+    padding: 15px;              /* Espacement intérieur pour aérer le contenu */
+    display: flex;              /* Utilisation de flexbox pour aligner les éléments sur une même ligne */
+    align-items: center;        /* Centrage vertical des éléments */
+    justify-content: space-between; /* Espace égal entre les éléments (logo au centre, menu à gauche/droite) */
+}
+
+/* Style pour le titre (h1) */
+/* On utilise ici une police cursive "Pacifico" provenant de Google Fonts.
+   La couleur est fixée en blanc, mais notez que le fond de l'en-tête est blanc donc ce style est probablement utilisé dans d'autres sections */
+h1 {
+    font-family: 'Pacifico', cursive; /* Police personnalisée pour donner un style manuscrit */
+    color: white;                     /* Couleur du texte en blanc */
+    margin: 0;                        /* Suppression des marges par défaut */
+    font-size: 24px;                  /* Taille de police pour le titre */
+}
+
+/* ========================= */
+/*       MENU BURGER         */
+/* ========================= */
+
+/* Le menu burger est un élément cliquable qui sert à afficher/cacher la navigation sur mobile */
+/* On utilise flexbox pour empiler les traits verticalement */
+.menu-burger {
+    cursor: pointer;                 /* Curseur en pointeur pour indiquer que c'est cliquable */
+    display: flex;                   /* Utilisation de flexbox pour disposer les spans en colonne */
+    flex-direction: column;          /* Empilement vertical des traits */
+    gap: 5px;                        /* Espacement entre les traits */
+    padding: 10px;                   /* Espacement interne pour rendre le clic plus confortable */
+    border-radius: 5px;              /* Bords arrondis pour un effet plus doux */
+    transition: box-shadow 0.3s ease-in-out; /* Transition pour un effet d'ombre lors du survol */
+}
+
+/* Chaque span représente un trait du burger */
+/* Dimensions fixes pour créer une apparence cohérente */
+.menu-burger span {
+    display: block;                 /* Affichage en bloc pour permettre le dimensionnement */
+    width: 30px;                    /* Largeur fixe du trait */
+    height: 4px;                    /* Hauteur fixe pour obtenir un trait fin */
+    background-color: rgb(0, 0, 0);   /* Couleur noire par défaut */
+    transition: background 0.3s;     /* Transition pour le changement de couleur */
+}
+
+/* Au survol, change la couleur des traits pour un effet visuel */
+/* Alternative : on pourrait aussi changer la taille ou ajouter une ombre */
+.menu-burger:hover span {
+    background-color: #8cbfd7;      /* Couleur changeante au survol (nuance de bleu) */
+}
+
+/* ========================= */
+/*      MENU LATÉRAL         */
+/* ========================= */
+
+/* Le menu latéral est une navigation cachée qui se glisse depuis le côté */
+/* Positionné en fixe pour rester visible lors du scroll */
+.side-menu {
+    position: fixed;                /* Position fixe pour rester à la même place pendant le scroll */
+    top: 0;                         /* Positionné en haut de l'écran */
+    left: -260px;                   /* Hors de l'écran à gauche par défaut */
+    width: 250px;                   /* Largeur fixe du menu latéral */
+    height: 100%;                   /* Occupe toute la hauteur de l'écran */
+    background-color: #ffffff;      /* Fond blanc */
+    box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Ombre portée pour créer une séparation visuelle */
+    padding-top: 60px;              /* Espace en haut pour ne pas chevaucher le header */
+    transition: transform 0.3s ease-in-out; /* Transition fluide pour l'animation d'ouverture/fermeture */
+    transform: translateX(0);       /* Transformation initiale (aucun déplacement) */
+    z-index: 5;                     /* Empilement au-dessus du contenu principal */
+}
+
+/* Classe pour ouvrir le menu latéral */
+/* Lorsque la classe 'open' est ajoutée, le menu se déplace vers la droite */
+.side-menu.open {
+    transform: translateX(260px);   /* Déplace le menu dans l'écran (260px à droite) */
+}
+
+/* Liens du menu latéral */
+/* On utilise ici la police 'Pacifico' pour un style personnalisé */
+.side-menu a {
+    font-family: pacifico;          /* Utilisation de la police Pacifico (attention à la casse, idéalement 'Pacifico') */
+    display: block;                 /* Chaque lien occupe toute la largeur */
+    padding: 15px;                  /* Espacement intérieur pour rendre le lien plus cliquable */
+    text-decoration: none;          /* Suppression du soulignement */
+    color: #084663;                 /* Couleur du texte */
+    font-size: 18px;                /* Taille de la police */
+    text-align: center;             /* Centrage du texte */
+    transition: background 0.3s, color 0.3s; /* Transition pour des effets visuels lors du survol */
+}
+
+/* Au survol, modification du fond et de la couleur du texte */
+/* Alternative : on peut aussi utiliser un changement de bordure ou d'ombre */
+.side-menu a:hover {
+    background-color: #8cbfd7;      /* Fond changeant au survol */
+    color: white;                   /* Texte en blanc pour le contraste */
+}
+
+/* Bouton de fermeture du menu latéral */
+/* Positionné en haut à droite dans le menu */
+.close-btn {
+    position: absolute;             /* Position absolue pour se placer dans le coin du menu */
+    top: 15px;                      /* 15px du haut */
+    right: 15px;                    /* 15px de la droite */
+    font-size: 30px;                /* Grande taille pour être facilement visible */
+    cursor: pointer;                /* Curseur en pointeur pour l'indication de cliquabilité */
+    color: #111314;                /* Couleur du bouton */
+    transition: color 0.3s;         /* Transition fluide pour le changement de couleur */
+}
+
+/* Changement de couleur du bouton au survol */
+.close-btn:hover {
+    color: #8cbfd7;                 /* Couleur changeante au survol */
+}
+
+/* ========================= */
+/*           LOGO            */
+/* ========================= */
+
+/* Style pour le logo affiché dans le header */
+.logo img {
+    height: 70px;       /* Hauteur fixe du logo pour un affichage cohérent */
+    width: auto;        /* La largeur s'ajuste automatiquement pour conserver les proportions */
+}
+
+/* ========================= */
+/*         ICÔNES            */
+/* ========================= */
+
+/* Conteneur des icônes à droite du header (recherche et panier) */
+.icons {
+    display: flex;           /* Utilise flexbox pour aligner les icônes horizontalement */
+    align-items: center;     /* Centre verticalement les icônes */
+    gap: 15px;               /* Espacement constant entre les icônes */
+}
+
+/* Style général pour chaque icône */
+.icon {
+    height: 30px;             /* Hauteur fixe pour homogénéiser la taille des icônes */
+    cursor: pointer;          /* Curseur en pointeur pour indiquer que l'icône est cliquable */
+    transition: transform 0.3s ease-in-out; /* Transition pour animer l'effet de survol */
+}
+
+/* Effet de survol sur les icônes : légère augmentation de la taille */
+.icon:hover {
+    transform: scale(1.1);    /* Agrandissement de 10% lors du survol */
+}
+
+/* ========================= */
+/*        RECHERCHE          */
+/* ========================= */
+
+/* Conteneur du bloc de recherche */
+.search-container {
+    display: flex;            /* Utilise flexbox pour aligner l'icône et le formulaire */
+    align-items: center;      /* Centre verticalement les éléments */
+    justify-content: center;  /* Centre horizontalement le contenu */
+}
+
+/* Style pour l'icône de recherche */
+/* L'icône a une forme circulaire */
+.search-icon {
+    cursor: pointer;          /* Indique que l'icône est interactive */
+    width: 40px;              /* Largeur fixe */
+    height: 40px;             /* Hauteur fixe */
+    border-radius: 50%;       /* Forme ronde */
+    transition: transform 0.3s ease-in-out; /* Transition pour une animation au survol */
+}
+
+/* Légère augmentation au survol */
+.search-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Formulaire de recherche */
+/* Positionné relativement pour permettre la superposition d'éléments si nécessaire */
+.search-form {
+    display: flex;            /* Aligne horizontalement le champ et le bouton */
+    align-items: center;
+    position: relative;
+    width: 100%;              /* Occupe toute la largeur disponible */
+    max-width: 400px;         /* Limite la largeur pour ne pas trop s'étendre sur grand écran */
+}
+
+/* Champ de saisie de recherche */
+/* Utilisation d'un padding pour le confort, et d'une bordure arrondie pour le style */
+#search-input {
+    padding: 12px;            /* Espacement intérieur pour le confort de saisie */
+    border: 2px solid #ccc;   /* Bordure grise par défaut */
+    border-radius: 25px;      /* Bordures arrondies pour un look moderne */
+    font-size: 16px;          /* Taille de la police pour la saisie */
+    flex-grow: 1;             /* Permet au champ de prendre tout l'espace restant */
+    outline: none;            /* Supprime le contour par défaut lors du focus */
+    transition: width 0.3s ease; /* Transition pour une éventuelle animation de largeur */
+}
+
+/* Changement de la bordure au focus pour indiquer l'interaction */
+#search-input:focus {
+    border-color: #4281b8;    /* Couleur bleue pour le focus */
+}
+
+/* Bouton de recherche (style de la loupe) */
+/* Bouton rond avec une couleur de fond distinctive */
+.search-button {
+    padding: 10px;            /* Espacement intérieur pour le bouton */
+    border: none;             /* Supprime la bordure par défaut */
+    background-color: #286698;  /* Couleur de fond initiale */
+    color: white;             /* Texte en blanc pour le contraste */
+    border-radius: 50%;       /* Forme ronde */
+    cursor: pointer;          /* Indique que c'est cliquable */
+    font-size: 18px;          /* Taille de la police pour le contenu du bouton */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transition pour des animations fluides */
+    margin-left: 10px;        /* Espace entre le champ et le bouton */
+}
+
+/* Couleur différente lorsque le bouton est pressé */
+.search-button:active {
+    background-color: #223f55;
+}
+
+/* Style spécifique pour l'icône à l'intérieur du bouton de recherche */
+.search-button .search-icon {
+    font-size: 18px;
+    margin-right: 0;
+}
+
+/* Bouton de recherche (alternative via un formulaire complet) */
+/* Ici, un autre style est défini pour un bouton dans le formulaire de recherche */
+#search-form button {
+    padding: 10px;
+    background-color: #5592a9;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+/* Changement de couleur au survol pour ce bouton */
+#search-form button:hover {
+    background-color: #304a56;
+}
+
+/* ========================= */
+/*           PANIER          */
+/* ========================= */
+
+/* Conteneur du panier (positionné pour superposer le compteur d'articles) */
+.cart {
+    position: relative;  /* Nécessaire pour positionner le compteur par rapport à ce conteneur */
+}
+
+/* Style pour le compteur d'articles dans le panier */
+/* Petite bulle avec fond coloré et texte centré */
+.cart-count {
+    position: absolute;
+    top: -5px;            /* Positionné légèrement au-dessus */
+    right: -10px;         /* Positionné légèrement à droite */
+    background-color: rgb(20, 95, 206); /* Couleur de fond pour le compteur */
+    color: white;         /* Texte en blanc */
+    font-size: 12px;      /* Taille de police réduite */
+    font-weight: bold;
+    width: 18px;          /* Taille fixe pour le compteur */
+    height: 18px;
+    display: flex;        /* Utilisation de flexbox pour centrer le texte */
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;   /* Forme ronde */
+    font-family: Arial, sans-serif;
+}
+
+/* ========================= */
+/*        HERO SECTION       */
+/* ========================= */
+
+/* Section principale de la bannière d'accueil */
+/* Utilise un dégradé pour le fond et un padding conséquent */
+.hero {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, #97ECF1, #DFFDFF); /* Dégradé diagonal */
+}
+
+/* Style du titre dans la section hero */
+.hero h2 {
+    font-family: 'Pacifico', cursive;
+    color: #333;          /* Couleur sombre pour le contraste avec le fond clair */
+    font-size: 28px;
+}
+
+/* Style du paragraphe dans la section hero */
+.hero p {
+    color: #555;          /* Couleur grise pour une lecture confortable */
+    font-size: 18px;
+}
+
+/* Style pour un bouton générique */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #97ECF1; /* Couleur pastel */
+    color: white;
+    text-decoration: none;      /* Pas de soulignement */
+    border-radius: 5px;         /* Coins arrondis */
+    font-weight: bold;
+}
+
+/* ========================= */
+/*         SLIDER            */
+/* ========================= */
+
+/* Conteneur du slider d'images */
+/* Positionné en relatif pour permettre aux slides d'être positionnées en absolu */
+.back {
+    position: relative;
+    width: 100%;            /* Occupe toute la largeur de la fenêtre */
+    height: 200px;          /* Hauteur fixe pour le slider */
+    display: flex;          /* Utilisation de flexbox pour aligner les slides */
+    flex-direction: row;    /* Organisation horizontale (les slides se superposent via position absolue) */
+    overflow: hidden;       /* Cache les parties débordantes */
+    margin-left: 0;         /* Pas de marge à gauche */
+}
+
+/* Styles pour chaque slide du slider */
+.slide {
+    position: absolute;     /* Permet de superposer les slides */
+    top: 0;
+    left: 0;
+    width: 100%;            /* Chaque slide occupe toute la largeur du conteneur */
+    height: 100%;           /* Et toute sa hauteur */
+    background-size: cover; /* L'image de fond s'adapte pour couvrir le conteneur */
+    background-position: center; /* Centre l'image de fond */
+    opacity: 0;             /* Initialement cachée */
+    transition: opacity 1s ease-in-out; /* Transition pour faire apparaître progressivement la slide */
+}
+
+/* Classe pour afficher la slide active */
+.slide.active {
+    opacity: 10;            /* Valeur très élevée pour rendre la slide visible 
+                              (normalement, on utilise 1 pour une opacité complète) */
+}
+
+/* ========================= */
+/*          HEADER (autre)     */
+/* ========================= */
+
+/* Une autre section d'en-tête (peut être utilisée pour une autre page) */
+.header {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #779DB6; /* Couleur de fond */
+}
+
+.header h1 {
+    font-size: 2.5rem;     /* Taille de police en rem, adaptée à la taille de la racine */
+    color: #fff;           /* Texte en blanc */
+}
+
+/* ========================= */
+/*      PAGE NOS PARFUMS      */
+/* ========================= */
+
+/* Style général pour la page des parfums */
+/* Ajoute un padding pour aérer le contenu et définit un fond clair */
+.perfumes-page {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* Titre de la page des parfums */
+.perfumes-page h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive; /* Utilise une police cursive pour le style */
+}
+
+/* Description de la page */
+/* Texte informatif centré avec une largeur maximale pour une meilleure lisibilité */
+.page-description {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Grille des parfums */
+/* Utilise CSS Grid pour disposer les cartes de parfums de manière fluide */
+.perfumes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* 'auto-fill' permet de remplir la ligne avec autant de colonnes que possible,
+       'minmax(250px, 1fr)' définit une largeur minimale de 250px et une largeur flexible */
+    gap: 20px;             /* Espacement entre les cartes */
+    justify-content: center; /* Centre la grille horizontalement */
+    align-items: start;    /* Aligne les cartes en haut de chaque ligne */
+}
+
+/* Style pour chaque carte de parfum */
+.perfume-card {
+    background-color: #fff;   /* Fond blanc pour les cartes */
+    border-radius: 8px;       /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Ombre légère pour la profondeur */
+    overflow: hidden;         /* Masque les débordements */
+    text-align: center;       /* Texte centré */
+    transition: transform 0.3s ease; /* Animation lors du survol */
+    padding: 20px;            /* Espacement interne */
+    position: relative;       /* Pour pouvoir positionner des éléments (ex. badges) par-dessus */
+}
+
+.perfume-card:hover {
+    transform: translateY(-10px); /* Légère translation vers le haut au survol */
+}
+
+/* Image du parfum dans la carte */
+.perfume-card img {
+    width: 100%;              /* L'image prend toute la largeur de la carte */
+    height: 250px;            /* Hauteur fixe */
+    object-fit: cover;        /* L'image couvre le conteneur sans déformer */
+    border-radius: 8px;       /* Coins arrondis pour correspondre à la carte */
+}
+
+/* Titre de la carte de parfum */
+.perfume-card h3 {
+    font-size: 24px;
+    color: #333;
+    margin: 20px 0;
+    font-family: 'Pacifico', cursive;
+}
+
+/* Description du parfum dans la carte */
+.perfume-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.5;         /* Hauteur de ligne pour une meilleure lisibilité */
+}
+
+/* Bouton d'action dans la carte de parfum */
+/* Bouton stylisé pour inciter à cliquer */
+.perfume-card .btn {
+    padding: 12px 25px;
+    background-color: #97ECF1; /* Couleur pastel */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.perfume-card .btn:hover {
+    background-color: #68c3d3; /* Couleur changeante au survol */
+}
+
+/* Effet de focus sur le bouton pour l'accessibilité */
+.perfume-card .btn:focus {
+    outline: none;
+    background-color: #68c3d3;
+}
+
+/* ========================= */
+/*    Bouton "Remonter"      */
+/* ========================= */
+
+/* Bouton permettant de remonter en haut de la page */
+/* Positionné en bas à droite et caché par défaut */
+#scroll-to-top {
+    position: fixed;
+    bottom: 18px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;   /* Le bouton est masqué jusqu'à ce qu'on l'affiche via JavaScript */
+}
+
+/* Style de l'image à l'intérieur du bouton "Remonter" */
+#scroll-to-top img {
+    width: 60%;      /* L'image occupe 60% de la largeur du bouton */
+    height: 70%;     /* Hauteur proportionnelle */
+    border-radius: 50%; /* Forme ronde */
+}
+
+/* ========================= */
+/*         FILTRES           */
+/* ========================= */
+
+/* Réinitialisation globale des marges et paddings */
+/* Alternative : vous pouvez utiliser un reset CSS complet ou Normalize.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal pour la section de filtres et produits */
+/* Dispose la sidebar et le contenu côte à côte via flexbox */
+.container {
+    display: flex;
+    gap: 20px;        /* Espace entre la sidebar et le contenu */
+    padding: 20px;
+}
+
+/* Sidebar des filtres (bloc gris) */
+/* Largeur fixe et style de fond pour séparer visuellement la section */
+.filter-sidebar {
+    width: 300px;             /* Largeur fixe */
+    background-color: #f0f0f0;  /* Fond gris clair */
+    padding: 20px;
+    border-radius: 8px;       /* Coins arrondis */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
+    display: flex;
+    flex-direction: column;   /* Disposition verticale des éléments */
+    gap: 20px;                /* Espacement entre les éléments internes */
+}
+
+/* Espacement entre chaque groupe de filtres */
+.filter-category,
+.filter-brand,
+.price-filter {
+    margin-bottom: 20px;
+}
+
+/* Bouton d'application des filtres */
+.filter-button {
+    width: 100%;              /* Occupe toute la largeur de la sidebar */
+    padding: 10px;
+    background-color: #007BFF; /* Couleur bleu vif */
+    color: white;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s; /* Transition pour le survol */
+}
+
+.filter-button:hover {
+    background-color: #0056b3; /* Couleur plus sombre au survol */
+}
+
+/* ----- SLIDER (filtre par prix) ----- */
+/* Style pour le conteneur du slider de prix */
+.price-filter {
+    width: 180px;              /* Largeur fixe pour le slider */
+    position: relative;
+    padding: 10px;
+    background: #f9f9f976;      /* Fond très clair avec transparence */
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+/* Conteneur affichant la plage de prix (min et max) */
+.price-range {
+    display: flex;
+    justify-content: space-between; /* Affiche les valeurs aux extrémités */
+    font-size: 14px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Barre du slider */
+/* Utilise une hauteur fixe et un fond gris pour la barre */
+.slider {
+    position: relative;
+    height: 8px;
+    background: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Pseudo-élément pour créer le dégradé sur la barre du slider */
+/* La position est calculée via des variables CSS personnalisées */
+.slider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: var(--slider-min-position, 0%); /* Valeur par défaut à 0% */
+    right: calc(100% - var(--slider-max-position, 100%)); /* Valeur par défaut à 100% */
+    height: 100%;
+    background: linear-gradient(90deg, #6a11cb, #2575fc); /* Dégradé du violet au bleu */
+    border-radius: 10px;
+}
+
+/* Style des inputs de type range (curseurs du slider) */
+.slider input[type="range"] {
+    position: absolute;
+    width: 100%;              /* Occupe toute la largeur de la barre */
+    height: 100%;             /* Occupe toute la hauteur de la barre */
+    background: none;         /* Pas de fond par défaut */
+    pointer-events: none;     /* Les événements sont désactivés sur l'input par défaut */
+    -webkit-appearance: none; /* Supprime le style par défaut sur Chrome/Safari */
+    appearance: none;
+}
+
+/* --- Curseur pour Chrome/Safari --- */
+.slider input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;              /* Largeur du curseur */
+    height: 15px;             /* Hauteur du curseur */
+    background: #fff;         /* Fond blanc */
+    border: 2px solid #2575fc; /* Bordure bleue */
+    border-radius: 50%;       /* Forme ronde */
+    cursor: pointer;
+    pointer-events: auto;     /* Active l'interaction sur le curseur */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Ombre pour un effet 3D */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);    /* Agrandissement lors du survol */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3); /* Ombre renforcée */
+}
+
+/* --- Curseur pour Firefox --- */
+.slider input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    border: 2px solid #2575fc;
+    border-radius: 50%;
+    cursor: pointer;
+    pointer-events: auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slider input[type="range"]::-moz-range-thumb:hover {
+    transform: scale(1.1);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Positionnement relatif des curseurs via des classes spécifiques */
+.slider-min {
+    z-index: 2; /* Curseur minimum au-dessus */
+}
+
+.slider-max {
+    z-index: 1; /* Curseur maximum en dessous */
+}
+
+/* ----- Conteneur des produits ----- */
+/* Wrapper pour regrouper les différentes sections de produits */
+.product-wrapper {
+    flex: 1;                 /* Occupe l'espace restant dans le container */
+    display: flex;
+    flex-direction: column;  /* Disposition verticale des sections */
+    gap: 20px;               /* Espacement entre les sections */
+}
+
+/* Style pour chaque section de produits */
+.product-container {
+    background-color: white;
+    padding: 20px;
+}
+
+/* Marge sous l'en-tête de chaque section de produits */
+.header-nouveaute {
+    margin-bottom: 20px;
+}
+
+/* Grille des produits utilisant CSS Grid */
+/* Affiche 4 colonnes de 150px chacune */
+.products {
+      display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 produits par ligne, prenant toute la largeur */
+    gap: 20px; /* Espacement entre les produits */
+    width: 100%; /* Utilisation complète de l'espace disponible */
+}
+
+/* Style pour chaque produit individuel */
+.product {
+    width: 150px;             /* Largeur fixe pour garantir l'uniformité */
+    text-align: center;       /* Centre le contenu textuel */
+    background-color: transparent; /* Fond transparent pour ne pas interférer avec l'image */
+    border: none;
+    box-shadow: none;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.product:hover {
+    transform: scale(1.20); /* Zoom léger */
+}
+
+/* Style pour l'image dans le produit */
+.product img {
+    width: 100%;              /* L'image occupe toute la largeur du produit */
+    height: auto;             /* Hauteur automatique pour préserver les proportions */
+    border-radius: 8px;       /* Coins arrondis pour un effet esthétique */
+}
+
+/* Informations textuelles dans le produit */
+.product-info {
+    margin-top: 10px;         /* Espace entre l'image et le texte */
+}
+
+/* Nom du produit */
+.product-name {
+    font-weight: bold;
+    font-size: 0.95rem;       /* Taille de police légèrement réduite */
+}
+
+/* Prix du produit */
+.product-price {
+    color: green;             /* Couleur verte pour indiquer une offre ou prix attractif */
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* ----- Bloc de contrôles en bas ----- */
+/* Section pour les contrôles (affichage et pagination) situés sous les produits */
+.bottom-controls {
+    display: flex;
+    justify-content: space-between; /* Espace entre le bloc d'affichage et la pagination */
+    align-items: center;            /* Aligne verticalement au centre */
+    padding: 0 20px;                /* Padding horizontal */
+    margin-top: 20px;               /* Marge au-dessus pour séparer du contenu précédent */
+}
+
+/* Styles pour les éléments d'affichage et de pagination */
+.bottom-controls .affichage,
+.bottom-controls .pagination {
+    font-size: 14px;
+}
+
+/* Style des liens dans le bloc de contrôles */
+.bottom-controls a {
+    margin-left: 10px;
+    text-decoration: none;
+    color: #007BFF;           /* Couleur bleue pour indiquer des liens cliquables */
+}
+
+/* Ligne horizontale de séparation */
+/* Utilisée pour séparer le bloc de contrôles du bloc suivant */
+hr {
+    margin-top: 20px;
+    border: none;
+    border-top: 1px solid #ccc;
+}
+
+/* ----- Bloc rose en bas ----- */
+/* Bannière finale avec fond rose et texte centré */
+.footer-banner {
+    display: flex; /* Active le mode flex pour aligner l'image et le texte */
+    align-items: center; /* Centre verticalement l’image et le texte */
+    justify-content: center; /* Centre le contenu horizontalement */
+    background-color: #f8d7da; /* Fond rose doux */
+    padding: 20px; /* Espacement intérieur */
+    gap: 20px; /* Espace entre l’image et le texte */
+    flex-wrap: wrap; /* Permet le retour à la ligne sur petits écrans */
+}
+
+/* Image à gauche */
+.footer-banner-image img {
+    width: 400px; /* Largeur adaptée */
+    height: auto; /* Hauteur ajustée automatiquement */
+    border-radius: 10px; /* Coins arrondis pour un effet doux */
+}
+
+/* Texte à droite */
+.footer-banner-text {
+    max-width: 60%; /* Évite que le texte prenne trop de place */
+    text-align: left; /* Alignement du texte */
+}
+
+/* ========================= */
+/*           FOOTER          */
+/* ========================= */
+
+/* Style du pied de page */
+/* Fond avec une teinte bleutée et texte en blanc */
+.footer {
+    background-color: #2174acc7; /* Couleur de fond */
+    padding: 20px 0;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+/* Style des titres dans le footer */
+footer h3 {
+    color: #ffffff;
+    font-size: 16px;
+}
+
+/* Disposition des sections du footer */
+/* Utilise flexbox pour aligner les sections côte à côte */
+.footer-sections {
+    display: flex;
+    justify-content: space-between; /* Distribution égale de l'espace */
+    border-top: 1px solid rgb(231, 237, 242); /* Trait de séparation en haut */
+}
+
+/* Chaque section du footer prend une part égale */
+.footer-sections > div {
+    flex: 1;
+    padding: 0 20px;
+}
+
+/* Ajout d'un séparateur vertical entre les sections, sauf pour la dernière */
+.footer-sections > div:not(:last-child) {
+    border-right: 1px solid rgb(239, 245, 245);
+}
+
+/* Liste sans puces pour les informations du footer */
+.footer-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Espacement entre les éléments de la liste */
+.footer-info li {
+    margin-bottom: 10px;
+}
+
+/* Liens dans le footer : texte en blanc et sans soulignement */
+.footer-info a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-info a:hover {
+    text-decoration: underline; /* Soulignement au survol */
+}
+
+/* Répétition du style pour le titre du footer (peut être consolidé) */
+.footer h3 {
+    margin-top: 0;
+}
+
+/* ========================= */
+/*       Réseaux sociaux     */
+/* ========================= */
+
+/* Conteneur des icônes sociales dans le footer */
+/* Utilise flexbox avec un gap entre chaque icône */
+.social-icons {
+    display: flex;
+    gap: 9%;       /* Alternative : utiliser des pixels pour un gap fixe */
+    margin: 10px 0;
+}
+
+/* Style pour chaque icône sociale */
+.social-icons a img {
+    width: 20px;   /* Largeur fixe */
+    height: 20px;  /* Hauteur fixe */
+    transition: transform 0.3s ease;
+}
+
+/* Effet de survol pour agrandir légèrement l'icône */
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+/* Au survol, le lien peut être souligné pour une indication visuelle */
+.social-icons a:hover {
+    text-decoration: underline;
+}
+
+.LOGO{
+    background-image: url("../imagesFooter/logoFooter.JPG");
+    background-size: cover;
+    height: 57px;
+    width: 150px;
+    margin: -60px 0px 0px 424px;
+    border-radius: 13px;
+
+}
+
+/* ========================= */
+/*      MEDIA QUERIES        */
+/* ========================= */
+
+/* -------------------- Responsive pour iPhone 14 (max-width: 390px) -------------------- */
+/* Ce style s'applique spécifiquement aux iPhone 14 en mode portrait */
+@media (max-width: 700px) {
+    
+    .side-menu {
+        position: fixed;
+        top: 0;
+        left: -260px;
+        width: 250px;
+        height: 100%;
+        background-color: #ffffff;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+        padding-top: 60px;
+        transition: transform 0.3s ease-in-out;
+        transform: translateX(0);
+        z-index: 5;
+    }
+    
+    .side-menu.open {
+        transform: translateX(260px);
+        width: 424px;
+    }
+    
+    .side-menu a {
+        font-family: pacifico;
+        display: block;
+        padding: 15px;
+        text-decoration: none;
+        color:#084663 ;
+        font-size: 47px;
+        text-align: center;
+        transition: background 0.3s, color 0.3s;
+    }
+    .close-btn {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 71px;
+        cursor: pointer;
+        color: #111314;
+        transition: color 0.3s;
+    }
+    .menu-burger {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: box-shadow 0.3s ease-in-out;
+    }
+    .logo img {
+        height: 167px; 
+        width: auto;
+        margin-left: 134px;
+    }
+    .menu-burger span {
+        display: block;
+        width: 62px;
+        height: 13px;
+        background-color: rgb(0, 0, 0);
+        transition: background 0.3s;
+    }
+
+    .icon {
+        height: 65px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+    }
+    .icons{
+        margin-left: 123px;
+    }
+    
+    .back {
+        position: relative;
+        width: 962px;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+        margin-left: 0;  
+    }
+    .bottom-controls .affichage,
+.bottom-controls .pagination {
+    font-size: 21px;
+}
+#scroll-to-top {
+    position:fixed;
+    bottom: 2px;
+    right: 22px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: none;   /* Le bouton est masqué jusqu'à ce qu'on l'affiche via JavaScript */
+}
+    .footer-banner {
+        display: flex; /* Active le mode flex pour aligner l'image et le texte */
+        align-items: center; /* Centre verticalement l’image et le texte */
+        justify-content: center; /* Centre le contenu horizontalement */
+        background-color: #f8d7da; /* Fond rose doux */
+        padding: 20px; /* Espacement intérieur */
+        gap: 20px; /* Espace entre l’image et le texte */
+        flex-wrap: wrap; 
+        width: 960px;
+    }
+    
+    /* Image à gauche */
+    .footer-banner-image img {
+        width: 400px; /* Largeur adaptée */
+        height: auto; /* Hauteur ajustée automatiquement */
+        border-radius: 10px; /* Coins arrondis pour un effet doux */
+        margin-right: 578px;
+    }
+
+    .footer-banner-text {
+        max-width: 60%;
+        text-align: left;
+        margin: -293px -60px 5px 316px;
+    }
+    .footer{
+        width: 963px;
+    }
+    .social-icons{
+        gap: 2%;
+    }
+    
+    
+    
+    
+
+}
